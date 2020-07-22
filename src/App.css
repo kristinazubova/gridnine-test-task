@@ -1,0 +1,32 @@
+.bg-blue {
+  background-color: #0088ca!important;
+  color: white;
+}
+
+.f-price {
+  font-size: 21px;
+}
+.f-lightblue {
+  color:#40afe0;
+}
+
+.f-23 {
+  font-size: 23px;
+}
+
+.f-21 {
+  font-size: 21px;
+}
+.f-orange {
+  color: #ffb368;
+}
+.button-orange {
+  background-color: #ffb368!important;
+  border: none!important;
+  border-radius: 0!important;
+}
+
+.hr-blue {
+  border-color: #0088ca;
+  border-width: 2px 0;
+}
