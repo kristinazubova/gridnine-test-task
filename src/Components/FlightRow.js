@@ -30,10 +30,7 @@ const daysOfWeek = {
 }
 
 export default class Flight extends Component {
-  constructor(props) {
-    super(props)
-  }
-
+  
   render() {
     
     let flight = this.props.data;
@@ -50,12 +47,14 @@ export default class Flight extends Component {
     let arrivalNumMonth = arrivalDate.getMonth();
     let dateEnd = arrivalDate.getDate() + ' ' + localizedMonthsMap[arrivalNumMonth];
     let arrivalDayOfWeek = daysOfWeek[arrivalWeekday];
-    let arrivalTime = arrivalDate.getHours() + ':' + arrivalDate.getMinutes();
+    let arrivalMinutes = arrivalDate.getMinutes() < 10 ? '0' + arrivalDate.getMinutes() : arrivalDate.getMinutes();
+    let arrivalTime = arrivalDate.getHours() + ':' + arrivalMinutes;
 
     let departureCity = get(flight, ['legs', index, 'segments', 0, 'departureCity', 'caption'], '-');
     let departureAirport = get(flight, ['legs', index, 'segments', 0,'departureAirport','caption'], '-');
     let departureAirportUid = get(flight, ['legs', index, 'segments', 0, 'departureAirport', 'uid'], '-');
-    let departureTime = departureDate.getHours() + ':' + departureDate.getMinutes();
+    let departureMinutes = departureDate.getMinutes() < 10 ? '0' + departureDate.getMinutes() : departureDate.getMinutes();
+    let departureTime = departureDate.getHours() + ':' + departureMinutes;
     let departNumMonth = departureDate.getMonth()
     let dateStart = departureDate.getDate() + ' ' + localizedMonthsMap[departNumMonth];
     let departureWeekday = departureDate.getDay();

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -24,14 +23,14 @@ export default class Flight extends Component {
   }
 
   getFlightsCard() {
-    return this.props.data.slice(0, this.state.visiable).map(({ flight }) => {
+    return this.props.data.slice(0, this.state.visiable).map(({ flight }, index) => {
       let airlanesCode = flight.legs[0].segments[0].airline.airlineCode
       let adressLogo = `http://pics.avs.io/100/50/${airlanesCode}.png`
 
-      return <div><Card.Header className="bg-blue">
+      return <div key={index}><Card.Header className="bg-blue">
         <Row>
           <Col>
-            <img src={adressLogo}></img>
+            <img src={adressLogo} alt={airlanesCode}></img>
           </Col>
           <Col className="px-3">
             <div className="text-right f-price">{flight.price.total.amount} P</div>
@@ -55,7 +54,7 @@ export default class Flight extends Component {
         {this.getFlightsCard()}
         <div className="text-center">
           {this.state.visiable < this.props.data.length &&
-          <Button type="button" onClick={this.loadMore} className="my-3">Показать еще</Button>
+          <Button type="button" onClick={this.loadMore} className="my-1">Показать еще</Button>
           }
         </div>
       </div>
