@@ -1,3 +1,7 @@
+## Мои комментарии
+
+Не успела привести в порядок стиль кода (нужно добавить linter). Выполняла задание в сжатые сроки, есть идеи по улучшению фильтрации, т.к. та, что есть, не совсем оптимальная.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
